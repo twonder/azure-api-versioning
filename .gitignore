@@ -19,6 +19,7 @@ local.settings.json
 *.user
 *.userosscache
 *.sln.docstates
+*.zip
 
 # Build results
 [Dd]ebug/
@@ -35,3 +36,4 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+ No newline at end of file
