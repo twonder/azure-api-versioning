@@ -17,6 +17,6 @@ zip -r ../../../../../function-app.zip .
 cd ../../../../..
 
 # Deploy the ZIP file to the Function App
-az functionapp deployment source config-zip -g rg-inventoryapi-dev -n $function_app_name --src function-app.zip
+az functionapp deployment source config-zip -g inventory-api-rg -n $function_app_name --src function-app.zip
 
 echo "Deployment completed successfully!"

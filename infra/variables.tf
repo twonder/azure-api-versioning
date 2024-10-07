@@ -5,7 +5,7 @@ variable "api_version" {
 
 variable "location" {
   description = "The Azure region to deploy resources to"
-  default     = "East US"
+  default     = "Central US"
 }
 
 variable "resource_group_name" {

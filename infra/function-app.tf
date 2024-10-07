@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "sa" {
-  name                     = "inventoryapisa${replace(var.api_version, ".", "")}"
+  name                     = "invapibxdsa${replace(var.api_version, ".", "")}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = var.location
   account_tier             = "Standard"

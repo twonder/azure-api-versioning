@@ -1,11 +1,11 @@
 resource "azurerm_api_management" "apim" {
-  name                = "inventory-apim"
+  name                = "gateway-apim"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
-  publisher_name      = "Your Company"
-  publisher_email     = "your-email@example.com"
+  publisher_name      = "Wondergem Dev"
+  publisher_email     = "timwondergem@gmail.com"
 
-  sku_name = "Developer_1"
+  sku_name = "Standard_1"
 }
 
 resource "azurerm_api_management_api" "inventory_api" {
