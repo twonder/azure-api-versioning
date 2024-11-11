@@ -1,4 +1,5 @@
 using System.Net;
+using InventoryApi.Models;
 using InventoryApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
@@ -54,7 +55,7 @@ public class GetItemsEndpoint
         {
             var counts = await _repository.GetInventoryItemsAsync(storeId, categoryId, inventoryDate);
             var response = req.CreateResponse(HttpStatusCode.OK);
-            await response.WriteAsJsonAsync(counts);
+            await response.WriteAsJsonAsync(counts.Select(c => InventoryCountResponse.FromInventoryCount(c)));
             return response;
         }
         catch (Exception ex)
