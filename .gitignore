@@ -14,6 +14,9 @@ local.settings.json
 # VS Code
 .vscode/
 
+# Jetbrains
+.idea/
+
 # User-specific files
 *.suo
 *.user
