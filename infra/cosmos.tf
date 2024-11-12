@@ -75,6 +75,24 @@ resource "azurerm_cosmosdb_sql_container" "inventory" {
   default_ttl = 8760  # Uncomment and set value in seconds if you want TTL
 }
 
+resource "azurerm_cosmosdb_sql_container" "lease" {
+  name = "${var.project_name}-leases"
+  resource_group_name = azurerm_resource_group.rg.name
+  account_name = azurerm_cosmosdb_account.db.name
+  database_name = azurerm_cosmosdb_sql_database.database.name
+  partition_key_paths = ["/id"]
+
+  default_ttl = 1209600  # Never expire
+
+  indexing_policy {
+    indexing_mode = "consistent"
+
+    included_path {
+      path = "/*"
+    }
+  }
+}
+
 # outputs.tf
 output "cosmos_account_name" {
   value = azurerm_cosmosdb_account.db.name

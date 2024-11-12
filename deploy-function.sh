@@ -38,7 +38,7 @@ cd ../../../../../
 echo "Deploying to Azure..."
 
 # Get Function App name
-export FUNCTION_APP_NAME=$(cd ../../infra && terraform output -raw function_app_name)
+export FUNCTION_APP_NAME=$(cd ../../infra && terraform output -raw function_api_app_name)
 export RESOURCE_GROUP_NAME=$(cd ../../infra && terraform output -raw resource_group_name)
 
 echo $FUNCTION_APP_NAME

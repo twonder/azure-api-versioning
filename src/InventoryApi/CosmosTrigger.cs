@@ -19,10 +19,10 @@ public class CosmosTrigger
     [Function("CosmosDBTrigger")]
     public async Task Run(
         [CosmosDBTrigger(
-            databaseName: "%CosmosDb:DatabaseName%",
-            containerName: "%CosmosDb:ContainerName%",
-            Connection = "CosmosDb",
-            LeaseContainerName = "leases",
+            databaseName: "%CosmosDbDatabaseName%",
+            containerName: "%CosmosDbContainerName%",
+            Connection = "%CosmosDbConnection%",
+            LeaseContainerName = "%CosmosDbLeaseContainerName%",
             CreateLeaseContainerIfNotExists = true)]
         IReadOnlyList<Dictionary<string, object>> input)
     {

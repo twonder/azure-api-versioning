@@ -15,7 +15,7 @@ export COSMOS_DB_PRIMARY_KEY=$(terraform output -raw cosmos_db_primary_key)
 export COSMOS_DB_NAME=$(terraform output -raw cosmos_db_name)
 export COSMOS_CONTAINER_NAME=$(terraform output -raw cosmos_container_name)
 # Get Function App name
-export FUNCTION_APP_NAME=$(terraform output -raw function_app_name)
+export FUNCTION_APP_NAME=$(terraform output -raw function_api_app_name)
 export RESOURCE_GROUP_NAME=$(terraform output -raw resource_group_name)
 
 cd ..
