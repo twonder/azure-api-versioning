@@ -69,7 +69,7 @@ resource "azurerm_linux_function_app" "function-api" {  # Changed to linux_funct
     "CosmosDbAccountKey" = azurerm_cosmosdb_account.db.primary_key
     "CosmosDbDatabaseName" = azurerm_cosmosdb_sql_database.database.name
     "CosmosDbContainerName" = azurerm_cosmosdb_sql_container.inventory.name
-    "CosmosDbConnection" = azurerm_cosmosdb_sql_container.inventory.
+    "CosmosDbConnection" = azurerm_cosmosdb_account.db.primary_sql_connection_string
     "CosmosDbLeaseContainerName" = azurerm_cosmosdb_sql_container.lease.name
     # "ASPNETCORE_ENVIRONMENT" = "Production"
     # "AzureWebJobsStorage" = azurerm_storage_account.sa.primary_connection_string

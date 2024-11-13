@@ -5,7 +5,7 @@ using Microsoft.Azure.Functions.Worker.Extensions.CosmosDB;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-// ChangesFeedFunction.cs
+// CosmosTrigger.cs
 public class CosmosTrigger
 {
     private readonly ILogger<CosmosTrigger> _logger;
@@ -21,7 +21,7 @@ public class CosmosTrigger
         [CosmosDBTrigger(
             databaseName: "%CosmosDbDatabaseName%",
             containerName: "%CosmosDbContainerName%",
-            Connection = "%CosmosDbConnection%",
+            Connection = "CosmosDbConnection",
             LeaseContainerName = "%CosmosDbLeaseContainerName%",
             CreateLeaseContainerIfNotExists = true)]
         IReadOnlyList<Dictionary<string, object>> input)

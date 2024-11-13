@@ -70,6 +70,8 @@ public class InventoryRepository : IInventoryRepository
 
     public async Task<InventoryCount> SaveInventoryCountAsync(InventoryCount count)
     {
+        count.SetId();
+        
         try
         {
            _logger.LogInformation("Saving inventory count for Store: {StoreId}, Category: {CategoryId}, ProductId: {ProductId}, InventoryDate: {InventoryDate}", 
@@ -96,8 +98,6 @@ public class InventoryRepository : IInventoryRepository
                     { 
                         WriteIndented = true 
                     }));
-                
-                count.SetId();
                 
                 // Create new record
                 var response = await _container.CreateItemAsync(
